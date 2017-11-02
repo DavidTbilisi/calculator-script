@@ -1,0 +1,90 @@
+<link href="style.css" rel="stylesheet">
+<div id="calc">
+  <div id="z_type_div">
+    <p>Виды заборов</p>
+    <select id="z_type">
+      <option value="prof">Профнастил</option>
+      <option value="three_D">3D панель</option>
+      <option value="zabor1">Забор из сетки (Размер 50x100)</option>
+      <option value="zabor2">Забор из сетки (Размер 50x63)</option>
+      <option value="zabor3">Забор из сетки (Размер 50x50)</option>
+    </select>
+  </div>
+  <div id="z_lenght_div">
+    <p>Длина в метрах</p>
+    <input id="z_lenght" min="0" placeholder="пример: 5" type="number">
+  </div>
+  <div id="z_height_div">
+    <p>Высота забора</p>
+    <select id="prof">
+      <option value="0">0м</option>
+      <option value="45">1,5м - 45euro</option>
+      <option value="50">2м -50euro</option>
+    </select>
+    <select id="three_D">
+      <option value="0">0м</option>
+      <option value="14">1м - 14euro</option>
+      <option value="15">1,2м - 15euro</option>
+      <option value="16.5">1.5м - 16.5euro</option>
+      <option value="18">1.7м - 18euro</option>
+      <option value="20">2м - 20euro</option>
+      <option value="24">2.4м - 24euro</option>
+    </select>
+    <select id="zabor1">
+      <option value="0">0м</option>
+      <option value="12">1,5м - 12euro</option>
+      <option value="13,5">1,7м - 13,5euro</option>
+      <option value="15">2м - 15euro</option>
+    </select>
+    <select id="zabor2">
+      <option value="0">0м</option>
+      <option value="13">1,5м - 13euro</option>
+      <option value="14,5">1,7м - 14,5euro</option>
+      <option value="16">2м - 16euro</option>
+    </select>
+    <select id="zabor3">
+      <option value="0">0м</option>
+      <option value="14">1,5м - 14euro</option>
+      <option value="15,5">1,7м - 15,5euro</option>
+      <option value="17">2м - 17euro</option>
+    </select>
+  </div>
+  <div id="v_type_div">
+    <p>Тип ворот</p>
+    <select id="v_type">
+      <option value="v_height_raspashnie">Ворота распашные</option>
+      <option value="v_height_otkatnie">Ворота откатные</option>
+    </select>
+  </div>
+  <div id="v_height_div">
+    <p>Высота ворот</p>
+    <select id="v_height_raspashnie">
+      <option value="0">Без ворот</option>
+      <option value="250">3м - 250euro</option>
+      <option value="275">3,5м - 275euro</option>
+      <option value="300">4м - 300euro</option>
+      <option value="325">4,5м - 325euro</option>
+      <option value="450">5м - 450euro</option>
+      <option value="550">5+м - 550euro</option>
+    </select>
+    <select id="v_height_otkatnie">
+      <option value="0">Без ворот</option>
+      <option value="420">3м - 420euro</option>
+      <option value="490">3,5м - 490euro</option>
+      <option value="560">4м - 560euro</option>
+      <option value="630">4,5м - 630euro</option>
+      <option value="750">5м - 750euro</option>
+      <option value="900">5+м - 900euro</option>
+    </select>
+  </div>
+  <div id="k_bool_div">
+    <input id="kalitka" type="checkbox" value="140 Калитка">
+    <label for="kalitka">Калитка</label>
+  </div>
+  <div id="z_result_div">
+    <p>Цена всего</p>
+    <input disabled="disabled" id="z_result" placeholder="Цена">
+  </div>
+  <div id="z_image"></div>
+</div>
+<script src="index.js"></script>

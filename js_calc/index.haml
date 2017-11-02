@@ -1,0 +1,82 @@
+%link{:rel => "stylesheet", :href => 'style.css'}
+#calc
+  #z_type_div
+    %p Виды заборов
+    %select#z_type
+      %option{:value=>"prof"}Профнастил
+      %option{:value=>"three_D"}3D панель
+      %option{:value=>"zabor1"}Забор из сетки (Размер 50x100)
+      %option{:value=>"zabor2"}Забор из сетки (Размер 50x63)
+      %option{:value=>"zabor3"}Забор из сетки (Размер 50x50)
+  #z_lenght_div
+    %p Длина в метрах
+    %input#z_lenght{:min => "0",
+           :type => "number",
+           :placeholder => "пример: 5"}
+  #z_height_div
+    %p Высота забора
+    %select#prof
+      %option{:value => '0'}0м
+      %option{:value => '45'}1,5м - 45euro
+      %option{:value => '50'}2м -50euro
+    %select#three_D
+      %option{:value => "0"}0м
+      %option{:value => "14"} 1м - 14euro
+      %option{:value => "15"} 1,2м - 15euro
+      %option{:value => "16.5"} 1.5м - 16.5euro
+      %option{:value => "18"} 1.7м - 18euro
+      %option{:value => "20"} 2м - 20euro
+      %option{:value => "24"} 2.4м - 24euro
+    %select#zabor1
+      %option{:value => "0"}0м
+      %option{:value => "12"} 1,5м - 12euro
+      %option{:value => "13,5"} 1,7м - 13,5euro
+      %option{:value => "15"} 2м - 15euro
+    %select#zabor2
+      %option{:value => "0"}0м
+      %option{:value => "13"} 1,5м - 13euro
+      %option{:value => "14,5"} 1,7м - 14,5euro
+      %option{:value => "16"} 2м - 16euro
+    %select#zabor3
+      %option{:value => "0"}0м
+      %option{:value => "14"} 1,5м - 14euro
+      %option{:value => "15,5"} 1,7м - 15,5euro
+      %option{:value => "17"} 2м - 17euro
+
+
+  #v_type_div
+    %p Тип ворот
+    %select#v_type
+      %option{:value => "v_height_raspashnie"}Ворота распашные
+      %option{:value => "v_height_otkatnie"}Ворота откатные
+  #v_height_div
+    %p Высота ворот
+    %select#v_height_raspashnie
+      %option{:value => "0"}Без ворот
+      %option{:value => "250"}3м - 250euro
+      %option{:value => "275"}3,5м - 275euro
+      %option{:value => "300"}4м - 300euro
+      %option{:value => "325"}4,5м - 325euro
+      %option{:value => "450"}5м - 450euro
+      %option{:value => "550"}5+м - 550euro
+    %select#v_height_otkatnie
+      %option{:value => "0"}Без ворот
+      %option{:value => "420"}3м - 420euro
+      %option{:value => "490"}3,5м - 490euro
+      %option{:value => "560"}4м - 560euro
+      %option{:value => "630"}4,5м - 630euro
+      %option{:value => "750"}5м - 750euro
+      %option{:value => "900"}5+м - 900euro
+
+
+  #k_bool_div
+    %input#kalitka{:type => "checkbox", :value => "140 Калитка"}
+    %label{:for => "kalitka"}Калитка
+  #z_result_div
+    %p Цена всего
+    %input#z_result{:disabled => 'disabled', :placeholder => 'Цена'}
+    
+    
+    
+  #z_image
+%script{:src => "index.js"}

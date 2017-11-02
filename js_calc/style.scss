@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$font-size: 1.1rem;
+#calc{
+
+    @for $i from 1 to 8 {
+      select:nth-child(#{$i}) {
+        // background: rgb(196, $i*30, $i*50);
+        border-radius: 3px !important;
+        padding: 2px 5px;
+      }
+    }
+
+    input,select {
+    border: 1px solid rgb(255, 143, 0) !important;
+    border-radius: 3px !important;
+    outline: 0 !important;
+    font-size: 1.6rem;
+    color: #313131;
+    padding: 2px;
+        option{
+            background: #ffffd1;
+            padding: 2px;
+            color: #313131;
+        }
+    }
+    #z_result_div{
+        text-align: center;
+        input{
+            text-align: center;
+        }
+    }
+    #z_image{
+        background-image: url('imagess/1.png');
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+
+
+
+
+
