@@ -19,11 +19,11 @@ inputs.v_height_raspashnie = q1("#v_height_raspashnie");
 inputs.v_height_otkatnie   = q1("#v_height_otkatnie");
 inputs.kalitka             = q1("#kalitka");
 inputs.z_image             = q1("#z_image");
-inputs.z_images            = ['http://u8.platformalp.ru/s/31k5q9b061/685a22f80fa6abffcaad69954807bff9/e2b9af06cd29da38db9b46511c637e3b.png',
-
+inputs.z_images            = [
+'http://u8.platformalp.ru/s/21719oe061/685a22f80fa6abffcaad69954807bff9/e8a38144108eefe960b544ec9ab253f8.png',
 'http://u8.platformalp.ru/s/21cs964061/685a22f80fa6abffcaad69954807bff9/ce5232e0d4d31f2624fdab0dd31315fb.png',
-
-'http://u8.platformalp.ru/s/21719oe061/685a22f80fa6abffcaad69954807bff9/e8a38144108eefe960b544ec9ab253f8.png'];
+'http://u8.platformalp.ru/s/31k5q9b061/685a22f80fa6abffcaad69954807bff9/e2b9af06cd29da38db9b46511c637e3b.png',
+];
 inputs.form                = q1("form[data-form*='Калькулятор_']");
 inputs.z_result            = q1("#z_result");
 
@@ -221,7 +221,7 @@ return {
 })(v)
    let site_width = function () { $("body").width() };
     function removeDublicate() { 
-        site_width < 750? view.q2("#calc")[0].remove() : view.q2("#calc")[1].remove();
+        site_width < 750? v.q2("#calc")[0].remove() : v.q2("#calc")[1].remove();
     }
     if($ != undefined) {
     $("body").on('resize', removeDublicate());
