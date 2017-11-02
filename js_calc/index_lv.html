@@ -1,0 +1,87 @@
+<link href="style.css" rel="stylesheet">
+<div id="calc">
+  <div id="z_type_div">
+    <p>Žogu veidi</p>
+    <select id="z_type">
+      <option value="prof">Profilloksnes</option>
+      <option value="three_D">3D panelis</option>
+      <option value="zabor1">Pītais žogs (Izmērs 50x100)</option>
+      <option value="zabor2">Pītais žogs (Izmērs 50x63)</option>
+      <option value="zabor3">Pītais žogs (Izmērs 50x50)</option>
+    </select>
+  </div>
+  <div id="z_lenght_div">
+    <p>Žogu garums metros</p>
+    <input id="z_lenght" min="0" type="number">
+  </div>
+  <div id="z_height_div">
+    <p>Žogu augstums</p>
+    <select id="prof">
+      <option value="45euro - 1,5м">1,5 m.</option>
+      <option value="50euro - 2м">2 m.</option>
+    </select>
+    <select id="three_D">
+      <option value="14euro - 1м">1 m.</option>
+      <option value="15euro - 1,2м">1,2 m.</option>
+      <option value="16.5euro - 1.5м">1.5 m.</option>
+      <option value="18euro - 1.7м">1.7 m.</option>
+      <option value="20euro - 2м">2 m.</option>
+      <option value="24euro - 2.4м">2.4 m.</option>
+    </select>
+    <select id="zabor1">
+      <option value="12euro - 1,5м">1,5 m.</option>
+      <option value="13,5euro - 1,7м">1,7 m.</option>
+      <option value="15euro - 2м">2 m.</option>
+    </select>
+    <select id="zabor2">
+      <option value="13euro - 1,5м">1,5 m.</option>
+      <option value="14,5euro - 1,7м">1,7 m.</option>
+      <option value="16euro - 2м">2 m.</option>
+    </select>
+    <select id="zabor3">
+      <option value="14euro - 1,5м">1,5 m.</option>
+      <option value="15,5euro - 1,7м">1,7 m.</option>
+      <option value="17euro - 2м">2 m.</option>
+    </select>
+  </div>
+  <div id="v_type_div">
+    <p>Vārtu veidi</p>
+    <select id="v_type">
+      <option value="none">bez vārtiem</option>
+      <option value="v_height_raspashnie">Veramie vārti</option>
+      <option value="v_height_otkatnie">Bīdāmie vārti</option>
+    </select>
+  </div>
+  <div id="v_height_div">
+    <p>Vārtu platums</p>
+    <select id="none">
+      <option value="0 - 0">-----</option>
+    </select>
+    <select id="v_height_raspashnie">
+      <option value="250euro - 3м">3 m.</option>
+      <option value="275euro - 3,5м">3,5 m.</option>
+      <option value="300euro - 4м">4 m.</option>
+      <option value="325euro - 4,5м">4,5 m.</option>
+      <option value="450euro - 5м">5 m.</option>
+      <option value="550euro+ - 5+м">5+ m.</option>
+    </select>
+    <select id="v_height_otkatnie">
+      <option value="420euro - 3м">3 m.</option>
+      <option value="490euro - 3,5м">3,5 m.</option>
+      <option value="560euro - 4м">4 m.</option>
+      <option value="630euro - 4,5м">4,5 m.</option>
+      <option value="750euro - 5м">5м</option>
+      <option value="900euro+ - 5+м">5+ m.</option>
+    </select>
+  </div>
+  <div id="k_bool_div">
+    <input id="kalitka" type="checkbox" value="140eruo Калитка">
+    <label for="kalitka">Vārtiņi</label>
+  </div>
+  <div id="z_result_div">
+    <p>Galējā cena</p>
+    <input disabled="disabled" id="z_result" placeholder="Galējā">
+  </div>
+  <div id="z_image"></div>
+</div>
+<script src="index.js"></script>

@@ -14,6 +14,7 @@ inputs.zabor1              = q1("#zabor1");
 inputs.zabor2              = q1("#zabor2");
 inputs.zabor3              = q1("#zabor3");
 inputs.v_type              = q1("#v_type");
+inputs.none                = q1("#none");
 inputs.v_height_raspashnie = q1("#v_height_raspashnie");
 inputs.v_height_otkatnie   = q1("#v_height_otkatnie");
 inputs.kalitka             = q1("#kalitka");
@@ -39,7 +40,7 @@ return {
 
 var c = (function(view){
 // console.log('controller');
-
+ 
 // functions
 var z_showTypeProperHeight = function () {
     function show(a) {view.inputs[a].style.display = 'block'}
@@ -82,6 +83,7 @@ var v_showTypeProperHeight = function (){
     function show(a) {view.inputs[a].style.display = 'block'}
     let type = view.inputs.v_type.value;
     let tohide = [
+                    view.inputs.none,
                     view.inputs.v_height_raspashnie,
                     view.inputs.v_height_otkatnie
                 ];
@@ -90,6 +92,9 @@ var v_showTypeProperHeight = function (){
     
     
         switch(type){
+        case "none":
+           view.inputs.none.style.display = 'block'
+            break;
         case "v_height_otkatnie":
            view.inputs.v_height_otkatnie.style.display = 'block'
             break;
@@ -123,9 +128,15 @@ var summeryAll = function() {
     console.log('all:', all);
     return all;
 }
-var forSubmitCalculator = function (ztype,zlength,zheight,vtype,zkalitka,price) {
+var forSubmitCalculator = function (ztype,
+                                     zlength,
+                                     zheight,
+                                     vtype,
+                                     vheight,
+                                     zkalitka,
+                                     price) {
   var field_arr = v.q2("form[data-form*='Калькулятор_'] .field input"),
-      arr = [field_arr[0].value,field_arr[1].value,ztype,zlength,zheight,vtype,zkalitka,price],
+      arr = [field_arr[0].value,field_arr[1].value, ztype, zlength, zheight, vtype, vheight, zkalitka, price],
       counter = 0;
         field_arr.forEach(function(a) {  console.log(a.value = arr[counter++])}) 
 }
@@ -135,17 +146,8 @@ var to_send = function () {
     var z_height         = view.inputs[v.inputs.z_type.value].value;
     var v_type           = view.inputs.v_type.value;
     var v_height         = view.inputs[v.inputs.v_type.value].value;
-    var kalitka          = view.inputs.kalitka.checked == "checked"? view.inputs.kalitka.value : 0;
+    var kalitka          = view.inputs.kalitka.checked? view.inputs.kalitka.value : 0;
     var summery          = view.inputs.z_result.value;
-    
-    //    var z_type_temp      = view.q1("#z_type").value;
-//    var z_lenght         = view.q1("#z_lenght").value;
-//    var z_height         = view.q1("#z_height_div select[style*='block']").value
-//    var v_type           = view.q1("#v_type").value;
-//    var v_height         = view.q1("#v_height_div select[style*='block']").value;
-//    var kalitka          = view.q1("#kalitka").checked == "checked"? view.q1("#kalitka").value : 0;
-//    var summery          = view.q1("#z_result").value;
-    
     
     v_type = v_type == "v_height_raspashnie" ? "Ворота распашные" :
              v_type == "v_height_otkatnie" ? "Ворота откатные" : 0;
@@ -167,7 +169,13 @@ var to_send = function () {
               summery   :  summery
             };
     
-    var sendArr = [z_type,z_lenght,z_height,v_type,v_height,kalitka,summery];
+    var sendArr = [z_type,
+                   z_lenght,
+                   z_height,
+                   v_type,
+                   v_height,
+                   kalitka,
+                   summery];
 
     return sendObj;
 }
@@ -184,18 +192,18 @@ z_showTypeProperHeight();
 v_showTypeProperHeight();
 })
     
-calc.addEventListener("keyup", function () {
+view.inputs.calc.addEventListener("keyup", function () {
 view.inputs.z_result.value = summeryAll();
 z_showTypeProperHeight();
 v_showTypeProperHeight();
 })
     
-    
-view.inputs.form.addEventListener("click", function () { 
+if(view.inputs.form){
+view.inputs.form.addEventListener("click", function () {
     var data = to_send();
     forSubmitCalculator(
 data.z_type,
-parseFloat(data.z_lenght),
+data.z_lenght,
 data.z_height,
 data.v_type,
 data.v_height,
@@ -203,7 +211,7 @@ data.kalitka,
 data.summery
     );
 })
-    
+    }
 return {
     viewEl:view.allEl,
     inputs: view.inputs,
@@ -211,4 +219,10 @@ return {
     sendMe: to_send
 }
 })(v)
-  
+   let site_width = function () { $("body").width() };
+    function removeDublicate() { 
+        site_width < 750? view.q2("#calc")[0].remove() : view.q2("#calc")[1].remove();
+    }
+    if($ != undefined) {
+    $("body").on('resize', removeDublicate());
+    }

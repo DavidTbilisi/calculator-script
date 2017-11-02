@@ -1,0 +1,78 @@
+%link{:rel => "stylesheet", :href => 'style.css'}
+#calc
+  #z_type_div
+    %p Žogu veidi
+    %select#z_type
+      %option{:value=>"prof"}Profilloksnes
+      %option{:value=>"three_D"}3D panelis
+      %option{:value=>"zabor1"}Pītais žogs (Izmērs 50x100)
+      %option{:value=>"zabor2"}Pītais žogs (Izmērs 50x63)
+      %option{:value=>"zabor3"}Pītais žogs (Izmērs 50x50)
+  #z_lenght_div
+    %p Žogu garums metros
+    %input#z_lenght{:min => "0",
+                    :type => "number"}
+  #z_height_div
+    %p Žogu augstums
+    %select#prof
+      %option{:value => '45euro - 1,5м'}1,5 m.
+      %option{:value => '50euro - 2м'}2 m.
+    %select#three_D
+      %option{:value => "14euro - 1м"} 1 m.
+      %option{:value => "15euro - 1,2м"} 1,2 m.
+      %option{:value => "16.5euro - 1.5м"} 1.5 m.
+      %option{:value => "18euro - 1.7м"} 1.7 m.
+      %option{:value => "20euro - 2м"} 2 m.
+      %option{:value => "24euro - 2.4м"} 2.4 m.
+    %select#zabor1
+      %option{:value => "12euro - 1,5м"} 1,5 m.
+      %option{:value => "13,5euro - 1,7м"} 1,7 m.
+      %option{:value => "15euro - 2м"} 2 m.
+    %select#zabor2
+      %option{:value => "13euro - 1,5м"} 1,5 m.
+      %option{:value => "14,5euro - 1,7м"} 1,7 m.
+      %option{:value => "16euro - 2м"} 2 m.
+    %select#zabor3
+     
+      %option{:value => "14euro - 1,5м"} 1,5 m.
+      %option{:value => "15,5euro - 1,7м"} 1,7 m.
+      %option{:value => "17euro - 2м"} 2 m.
+
+
+  #v_type_div
+    %p Vārtu veidi
+    %select#v_type
+      %option{:value => "none"}bez vārtiem
+      %option{:value => "v_height_raspashnie"}Veramie vārti
+      %option{:value => "v_height_otkatnie"}Bīdāmie vārti
+  #v_height_div
+    %p Vārtu platums
+    %select#none
+      %option{:value => "0 - 0"}-----
+    %select#v_height_raspashnie
+      %option{:value => "250euro - 3м"}3 m.
+      %option{:value => "275euro - 3,5м"}3,5 m.
+      %option{:value => "300euro - 4м"}4 m.
+      %option{:value => "325euro - 4,5м"}4,5 m.
+      %option{:value => "450euro - 5м"}5 m.
+      %option{:value => "550euro+ - 5+м"}5+ m.
+    %select#v_height_otkatnie
+      %option{:value => "420euro - 3м"}3 m.
+      %option{:value => "490euro - 3,5м"}3,5 m.
+      %option{:value => "560euro - 4м"}4 m.
+      %option{:value => "630euro - 4,5м"}4,5 m.
+      %option{:value => "750euro - 5м"}5м
+      %option{:value => "900euro+ - 5+м"}5+ m.
+
+
+  #k_bool_div
+    %input#kalitka{:type => "checkbox", :value => "140eruo Калитка"}
+    %label{:for => "kalitka"}Vārtiņi
+  #z_result_div
+    %p Galējā cena
+    %input#z_result{:disabled => 'disabled', :placeholder => 'Galējā'}
+    
+    
+    
+  #z_image
+%script{:src => "index.js"}
